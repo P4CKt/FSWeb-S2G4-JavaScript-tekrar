@@ -19,7 +19,7 @@ function KareninAlani(kenaruzunlugu){
 
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
-
+console.log(KareninAlani(10));
 
 /* 	GÖREV 1:  
 		- CemberinCevresi fonksiyonunu kullanarak aşağıdaki yönergeleri uygulayın:
@@ -29,10 +29,10 @@ function KareninAlani(kenaruzunlugu){
 			4. Hesaplanan çemberin çevresi döndürülecektir.
 		*/
 
-function CemberinCevresi(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinCevresi(radius){
+	return (radius*2*pi);
 }
-
+console.log(CemberinCevresi(5));
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -47,10 +47,10 @@ function CemberinCevresi(/* kodlar buraya */){
 			4. Hesaplanan çemberin alanı döndürülecektir.
 		*/
 		
-function CemberinAlani(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinAlani(radius,pi,){
+	return (pi*Math.pow(radius,2));
 }
-
+console.log(CemberinAlani(15,pi));
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -78,41 +78,54 @@ function CemberinAlani(/* kodlar buraya */){
 	//3a çözümü
 
 	/* kodlar buraya */
-	
+
+	enbuyuk = 0;
+	enkucuk = 1000;
+	for (let index = 0; index < sayilar.length; index++) {
+		if (sayilar[index]> enbuyuk ) {
+			enbuyuk = sayilar[index];
+		}
+		if (sayilar[index]< enkucuk ) {
+			enkucuk = sayilar[index];
+		}
+	}
+	console.log(`En Büyük Sayı ${enbuyuk}, En Küçük Sayı ${enkucuk}`);
 	
 	
 	// 3b çözümü:
-
+	console.clear();
 	/* kodlar buraya */
-		
-		
+	ucetambolunenler= [];
+	sayilar.forEach(ucebol);
+		function ucebol(item){ 
+		if(item%3==0)
+		ucetambolunenler.push(item);}
+	
+	
+	console.log(ucebolunenlerintoplami);
 		
 	//3c çözümü:
 	
 	/* kodlar buraya */
-
-	
-	
+		
+		ucebolunenlerintoplami = ucetambolunenler.reduce(myFunc);
+		function myFunc(total,num){ return total +num}
+		
 	//3d çözümü
 	
 	/* kodlar buraya */
-
+	besyuzdenkucuksayilar = sayilar.filter(item => item<500)
 
 
 	//3e çözümü
 
 	/* kodlar buraya */
-	
+	siralisayilar = besyuzdenkucuksayilar.sort((a,b) => a - b)
 	
 	//3f çözümü
 	
 	/* kodlar buraya */
 
-
-
-
-	
-		
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa(){
